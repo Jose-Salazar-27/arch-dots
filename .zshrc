@@ -130,6 +130,7 @@ add-zsh-hook -Uz precmd rehash_precmd
 
 #hyprland/waybar
 alias waybar-reload='pkill waybar && hyprctl dispatch exec waybar'
+alias dots="cd $HOME/dotfiles"
 
 # omz
 alias zshconfig="geany ~/.zshrc"
