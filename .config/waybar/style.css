@@ -233,6 +233,10 @@ tooltip {
     color: #4a4a4a;
   }
 }
+#custom-nvidia {
+  color: #a1bdce;
+}
+
 #network {
   color: #a1bdce;
   font-weight: normal;
@@ -240,6 +244,7 @@ tooltip {
   padding-right: 10px;
   padding-left: 10px;
 }
+
 #custom-notifications,
 #custom-spotify,
 #taskbar,
