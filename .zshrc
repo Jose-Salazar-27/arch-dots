@@ -136,6 +136,11 @@ alias dots="cd $HOME/dotfiles"
 alias zshconfig="geany ~/.zshrc"
 alias ohmyzsh="thunar ~/.oh-my-zsh"
 
+# exa 
+alias lss='exa --icons --oneline --long --git'
+alias lsa='exa --icons --oneline --long --all'
+alias lst='exa --icons --tree'
+
 # ls
 alias l='ls -lh'
 alias ll='ls -lah'
