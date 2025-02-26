@@ -7,6 +7,9 @@ return {
     "gleam",
     "templ",
     "hyprlang",
+    "vim",
+    "vimdoc",
+    "python",
   },
   highlight = {
     enable = true,

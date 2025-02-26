@@ -9,6 +9,10 @@ return {
     "eslint-lsp",
     "prettier",
     "hyprls",
+    "pyright",
+    "black",
+    "ruff",
+    "debugpy",
   },
 
   ui = {

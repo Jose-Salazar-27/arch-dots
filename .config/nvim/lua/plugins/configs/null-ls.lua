@@ -3,11 +3,16 @@ local null_ls = require("null-ls")
 
 return {
   sources = {
+    --- golang
     -- null_ls.builtins.formatting.golines,
     null_ls.builtins.formatting.goimports_reviser,
     null_ls.builtins.formatting.stylua,
+    -- javascript/typescript
     null_ls.builtins.diagnostics.eslint,
     null_ls.builtins.formatting.prettier,
+    -- python
+    null_ls.builtins.diagnostics.ruff,
+    null_ls.builtins.formatting.black,
   },
   on_attach = function(client, bufnr)
     if client.supports_method("textDocument/formatting") then
