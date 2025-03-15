@@ -7,9 +7,13 @@ local config = wezterm.config_builder()
 -- This is where you actually apply your config choices
 
 -- For example, changing the color scheme:
-config.color_scheme = "AdventureTime"
+config.color_scheme_dirs = { "~/.config/wezterm/themes/" }
+-- config.color_scheme = "tokyonight_night"
+config.color_scheme = "Catppuccin Mocha (Gogh)"
+
 config.font = wezterm.font("Iosevka NF")
 config.font_size = 16.0
+
 config.hide_tab_bar_if_only_one_tab = true
 config.enable_scroll_bar = false
 
