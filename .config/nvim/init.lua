@@ -23,5 +23,5 @@ local is_windows = vim.loop.os_uname().sysname == "Windows_NT"
 vim.env.PATH = vim.fn.stdpath("data") .. "/mason/bin" .. (is_windows and ";" or ":") .. vim.env.PATH
 
 vim.o.termguicolors = true
-vim.cmd([[colorscheme tokyonight-night]])
+-- vim.highlight.priorities.semantic_tokens = 95
 require("config.lazy")

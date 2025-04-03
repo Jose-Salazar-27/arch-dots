@@ -3,6 +3,13 @@ return {
     "neovim/nvim-lspconfig",
     dependencies = { "saghen/blink.cmp" },
     lazy = false,
+    opts = {
+      ---@class PluginLspOpts
+      inlay_hints = { enabled = true },
+      codelens = {
+        enabled = true,
+      },
+    },
     config = function()
       local lspconfig = require("lspconfig")
       local capabilities = require("plugins.configs.lspconfig-nvc").capabilities
@@ -21,6 +28,10 @@ return {
             },
           },
         },
+      })
+
+      lspconfig.bashls.setup({
+        filetypes = { "sh", "zsh" },
       })
 
       lspconfig.rust_analyzer.setup({
@@ -45,6 +56,7 @@ return {
         root_dir = util.root_pattern("go.work", "go.mod", ".git"),
         settings = {
           gopls = {
+            semanticTokens = true,
             completeUnimported = true,
             usePlaceholders = false,
             analyses = {
