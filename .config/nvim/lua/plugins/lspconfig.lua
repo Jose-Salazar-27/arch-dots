@@ -19,6 +19,11 @@ return {
       local on_attach = require("plugins.configs.lspconfig-nvc").on_attach
       local util = require("lspconfig/util")
 
+      vim.diagnostic.config({
+        -- virtual_lines = true,
+        virtual_text = true,
+      })
+
       lspconfig.lua_ls.setup({
         settings = {
           Lua = {
