@@ -14,7 +14,7 @@ return {
       css = { { "prettierd", "prettier", stop_after_first = true } },
       scss = { { "prettierd", "prettier", stop_after_first = true } },
       sh = { "shellcheck" },
-      go = { "gofmt" },
+      go = { "goimports", "gofmt" },
       lua = { "stylua" },
     },
     default_format_opts = {

@@ -64,6 +64,8 @@ return {
           "stylua",
           "shellcheck",
           "beautysh",
+          "hadolint",
+          "yamlfix",
         },
       })
     end,

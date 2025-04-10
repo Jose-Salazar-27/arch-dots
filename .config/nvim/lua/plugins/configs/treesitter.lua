@@ -1,6 +1,10 @@
 return {
   ensure_installed = {
     "go",
+    "gomod",
+    "gosum",
+    "gowork",
+    "gotmpl",
     "lua",
     "pkl",
     "rust",
@@ -10,6 +14,12 @@ return {
     "vim",
     "vimdoc",
     "python",
+    "dockerfile",
+    "bash",
+    "json",
+    "yaml",
+    "typescript",
+    "javascript",
   },
   highlight = {
     enable = true,

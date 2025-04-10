@@ -98,6 +98,26 @@ return {
         capabilities = capabilities,
         filetypes = { "python" },
       })
+
+      lspconfig.yamlls.setup({
+        filetypes = { "yaml", "yaml.docker-compose" },
+        settings = {
+          yaml = {
+            schemaStore = {
+              enable = true,
+              url = "https://json.schemastore.org/v1/schema.json",
+            },
+          },
+        },
+      })
+
+      lspconfig.dockerls.setup({
+        capabilities = capabilities,
+      })
+
+      lspconfig.docker_compose_language_service.setup({
+        capabilities = capabilities,
+      })
     end,
   },
 }
