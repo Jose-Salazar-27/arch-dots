@@ -10,27 +10,27 @@ builtin_box_drawing = true
 
 ## Normal font family.
 [font.normal]
-family = "GeistMono Nerd Font"
+family = "JetBrainsMono Nerd Font"
 style = "Regular"
 
 ## If the family is not specified, it will fall back to the value specified for the normal font.
 [font.bold]
-family = "GeistMono Nerd Font"
+family = "JetBrainsMono Nerd Font"
 style = "Regular"
 
 ## If the family is not specified, it will fall back to the value specified for the normal font.
 [font.italic]
-family = "GeistMono Nerd Font"
+family = "JetBrainsMono Nerd Font"
 
 ## If the family is not specified, it will fall back to the value specified for the normal font.
 [font.bold_italic]
-family = "GeistMono Nerd Font"
+family = "JetBrainsMono Nerd Font"
 
 ## Offset is the extra space around each character.
 ## 'y' can be thought of as modifying the line spacing, and 'x' as modifying the letter spacing.
 [font.offset]
 x = 0
-y = 0 
+y = 1 
 ## Glyph offset determines the locations of the glyphs within their cells with the default being at the bottom.
 ## Increasing 'x' moves the glyph to the right, increasing 'y' moves the glyph upward.
 [font.glyph_offset]
