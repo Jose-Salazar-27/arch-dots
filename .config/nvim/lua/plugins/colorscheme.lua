@@ -3,9 +3,16 @@ return {
     "folke/tokyonight.nvim",
     name = "tokyonight",
     priority = 1000,
-    config = function()
-      vim.cmd([[colorscheme tokyonight-night]])
-    end,
+    opts = {
+      transparent = true,
+      styles = {
+        sidebars = "transparent",
+        floats = "transparent",
+      },
+    },
+    -- config = function()
+    --   vim.cmd([[colorscheme tokyonight-night]])
+    -- end,
   },
   {
     "catppuccin/nvim",
