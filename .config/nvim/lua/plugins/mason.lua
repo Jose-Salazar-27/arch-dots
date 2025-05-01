@@ -7,7 +7,6 @@ return {
     },
     cmd = { "Mason", "MasonInstall", "MasonInstallAll", "MasonUpdate" },
     config = function(_, opts)
-      -- require("mason").setup(opts)
       local mason = require("mason")
       local mason_lsp = require("mason-lspconfig")
       local mason_tool_installer = require("mason-tool-installer")
@@ -71,16 +70,4 @@ return {
     end,
   },
   { "williamboman/mason-lspconfig.nvim" },
-  -- {
-  --   "WhoIsSethDaniel/mason-tool-installer.nvim",
-  --   opts = require("plugins.configs.mason"),
-  --   dependencies = { "williamboman/mason.nvim" },
-  --   cmd = {
-  --     "MasonToolsInstall",
-  --     "MasonToolsInstallSync",
-  --     "MasonToolsUpdate",
-  --     "MasonToolsUpdateSync",
-  --     "MasonToolsClean",
-  --   },
-  -- },
 }

@@ -5,11 +5,32 @@ return {
 
   -- use a release tag to download pre-built binaries
   version = "1.*",
+  -- AND/OR build from source, requires nightly: https://rust-lang.github.io/rustup/concepts/channels.html#working-with-nightly-rust
+  -- build = 'cargo build --release',
+  -- If you use nix, you can build from source using latest nightly rust with:
+  -- build = 'nix run .#build-plugin',
+
   ---@module 'blink.cmp'
   ---@type blink.cmp.Config
   opts = {
+    -- 'default' (recommended) for mappings similar to built-in completions (C-y to accept)
+    -- 'super-tab' for mappings similar to vscode (tab to accept)
+    -- 'enter' for enter to accept
+    -- 'none' for no mappings
+    --
+    -- All presets have the following mappings:
+    -- C-space: Open menu or open docs if already open
+    -- C-n/C-p or Up/Down: Select next/previous item
+    -- C-e: Hide menu
+    -- C-k: Toggle signature help (if signature.enabled = true)
+    --
+    -- See :h blink-cmp-config-keymap for defining your own keymap
     keymap = {
-      preset = "enter",
+      preset = "default",
+      -- mappings to still nvim-cmp mekymaps
+      ["<C-e>"] = { "hide", "fallback" },
+      ["<CR>"] = { "select_and_accept", "fallback" },
+
       ["<S-Tab>"] = { "select_prev", "fallback" },
       ["<Tab>"] = { "select_next", "fallback" },
     },
@@ -23,7 +44,14 @@ return {
     -- (Default) Only show the documentation popup when manually triggered
     completion = {
       documentation = { auto_show = false },
-      list = { selection = "auto_insert" },
+
+      -- https://cmp.saghen.dev/configuration/completion.html#ghost-text
+      ghost_text = { enabled = false },
+    },
+
+    signature = {
+      window = { border = "single", show_documentation = false },
+      enabled = true,
     },
 
     -- Default list of enabled providers defined so that you can extend it
