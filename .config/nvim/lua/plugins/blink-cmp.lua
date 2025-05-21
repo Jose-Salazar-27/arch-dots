@@ -26,13 +26,15 @@ return {
     --
     -- See :h blink-cmp-config-keymap for defining your own keymap
     keymap = {
-      preset = "default",
+      preset = "none",
       -- mappings to still nvim-cmp mekymaps
       ["<C-e>"] = { "hide", "fallback" },
       ["<CR>"] = { "select_and_accept", "fallback" },
 
       ["<S-Tab>"] = { "select_prev", "fallback" },
       ["<Tab>"] = { "select_next", "fallback" },
+      -- ['<C-space>'] = {function(cmp) cmp.show({ providers = { 'snippets' } }) end}
+      ["<C-space>"] = { "show", "show_documentation", "hide_documentation" },
     },
 
     appearance = {
@@ -43,7 +45,7 @@ return {
 
     -- (Default) Only show the documentation popup when manually triggered
     completion = {
-      documentation = { auto_show = false },
+      documentation = { auto_show = true },
 
       -- https://cmp.saghen.dev/configuration/completion.html#ghost-text
       ghost_text = { enabled = false },

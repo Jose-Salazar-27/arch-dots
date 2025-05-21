@@ -14,6 +14,7 @@ local handle_golangcilint_version = function()
       "run",
       "--out-format",
       "json",
+      "--output.text.path=stderr",
       "--issues-exit-code=0",
       "--show-stats=false",
       "--print-issued-lines=false",
