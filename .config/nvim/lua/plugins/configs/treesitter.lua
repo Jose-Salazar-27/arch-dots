@@ -20,6 +20,8 @@ return {
     "yaml",
     "typescript",
     "javascript",
+    "tsx",
+    "css",
   },
   highlight = {
     enable = true,

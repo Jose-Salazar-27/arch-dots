@@ -45,6 +45,7 @@ return {
           "gopls",
           "lua-language-server",
           "typescript-language-server",
+          "tailwindcss-language-server",
           "eslint-lsp",
           "hyprls",
           "docker-compose-language-service",

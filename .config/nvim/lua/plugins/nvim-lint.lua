@@ -5,6 +5,7 @@ local handle_golangcilint_version = function()
       "--output.json.path=stdout",
       "--issues-exit-code=0",
       "--show-stats=false",
+      "--output.text.path=stderr",
       function()
         return vim.fn.fnamemodify(vim.api.nvim_buf_get_name(0), ":h")
       end,
@@ -47,8 +48,8 @@ return {
     }
 
     -- read at: https://github.com/mfussenegger/nvim-lint/issues/760#issuecomment-2758985229
-    local golang_linter = lint.linters.golangcilint
-    golang_linter.args = handle_golangcilint_version()
+    -- local golang_linter = lint.linters.golangcilint
+    -- golang_linter.args = handle_golangcilint_version()
 
     -- local lint_augroup = vim.api.nvim_create_augroup("lint", { clear = true })
 

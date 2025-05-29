@@ -73,11 +73,18 @@ return {
       })
 
       lspconfig.tailwindcss.setup({
+        on_attach = on_attach,
+        capabilities = capabilities,
         settings = {
           includeLanguages = {
             templ = "html",
           },
         },
+      })
+
+      lspconfig.eslint.setup({
+        on_attach = on_attach,
+        capabilities = capabilities,
       })
 
       lspconfig.templ.setup({})
