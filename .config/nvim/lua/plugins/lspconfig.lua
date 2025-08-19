@@ -124,6 +124,10 @@ return {
       lspconfig.docker_compose_language_service.setup({
         capabilities = capabilities,
       })
+
+      lspconfig.gh_actions_ls.setup({
+        capabilities = capabilities,
+      })
     end,
   },
 }

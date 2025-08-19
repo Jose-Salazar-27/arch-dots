@@ -54,6 +54,7 @@ return {
           "gh-actions-language-server",
           "json-lsp",
           "bash-language-server",
+          "nginx-language-server",
           -- linters and formatters
           "gofumpt",
           "goimports",
@@ -66,6 +67,8 @@ return {
           "beautysh",
           "hadolint",
           "yamlfix",
+          "actionlint",
+          "nginx-config-formatter",
         },
       })
     end,
