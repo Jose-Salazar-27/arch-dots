@@ -5,16 +5,32 @@
 local map = vim.keymap.set
 
 -- map("n", "<leader>fw", "<cmd>Telescope live_grep<CR>", { desc = "telescope live grep" })
-map("i", "<C-b>", "<ESC>^i", { desc = "Move Beginning of line" }) -- move to the beginning of the line
-map("i", "<C-e>", "<End>", { desc = "Move End of line" })
 
+-- Go to the beginning or end of the line
+map({ "v" }, "H", "^i", { desc = "Move Beginning of line" })
+map({ "v" }, "L", "<End>", { desc = "Move End of line" })
+
+-- Move along the buffer in insert mode
 map("i", "<C-h>", "<Left>", { desc = "move left" })
 map("i", "<C-l>", "<Right>", { desc = "move right" })
 map("i", "<C-j>", "<Down>", { desc = "move down" })
 map("i", "<C-k>", "<Up>", { desc = "move up" })
+
+-- Lsp rename
 map("n", "<leader>rn", ":IncRename ")
 
+-- Call formatter manually
 map("n", "<leader>fm", function()
   require("conform").format({ async = true })
   vim.notify("Manual format was executed", "info", { title = "Conform.nvim" })
 end, { desc = "Format buffer" })
+
+-- Floating term handling
+map(
+  "n",
+  "<leader>tt",
+  ":ToggleTerm direction=horizontal<cr>",
+  { noremap = true, desc = "Toggle terminal (horizontal)" }
+)
+
+map("n", "<leader>tf", ":ToggleTerm direction=float<cr>", { noremap = true, desc = "Toggle terminal (float)" })
