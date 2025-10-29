@@ -24,4 +24,5 @@ vim.env.PATH = vim.fn.stdpath("data") .. "/mason/bin" .. (is_windows and ";" or 
 
 vim.o.termguicolors = true
 -- vim.highlight.priorities.semantic_tokens = 95
+require("config.globals")
 require("config.lazy")
