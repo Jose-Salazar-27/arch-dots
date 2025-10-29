@@ -14,7 +14,7 @@ return {
       typescriptreact = { "eslint_d" },
       svelte = { "eslint_d" },
       go = { "golangcilint" },
-      lua = { "stylua" },
+      lua = { "luacheck" },
       dockerfile = { "hadolint" },
       github = { "actionlint" },
     }
