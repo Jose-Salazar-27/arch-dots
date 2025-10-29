@@ -69,6 +69,7 @@ return {
           "yamlfix",
           "actionlint",
           "nginx-config-formatter",
+          "luacheck",
         },
       })
     end,
