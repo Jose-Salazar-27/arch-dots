@@ -70,6 +70,9 @@ return {
           "actionlint",
           "nginx-config-formatter",
           "luacheck",
+          -- misc
+          "gotests",
+          "gotestsum",
         },
       })
     end,
