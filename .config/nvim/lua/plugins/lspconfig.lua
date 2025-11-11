@@ -24,6 +24,9 @@ return {
       })
 
       lspconfig.lua_ls.setup({
+        cmd = { "lua-language-server" },
+        filetypes = { "lua" },
+        root_markers = { ".luarc.json", ".luarc.jsonc" },
         settings = {
           Lua = {
             diagnostics = {
