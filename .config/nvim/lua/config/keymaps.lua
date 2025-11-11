@@ -32,5 +32,10 @@ map(
   ":ToggleTerm direction=horizontal<cr>",
   { noremap = true, desc = "Toggle terminal (horizontal)" }
 )
-
 map("n", "<leader>tf", ":ToggleTerm direction=float<cr>", { noremap = true, desc = "Toggle terminal (float)" })
+-- Exit terminal with Esc
+map("t", "<Esc>", "<C-\\><C-N>")
+
+-- moves highlighted lines up (K) or down (J) in visual mode
+map("v", "J", ":m '>+1<CR>gv=gv")
+map("v", "K", ":m '<-2<CR>gv=gv")
