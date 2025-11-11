@@ -54,7 +54,14 @@ return {
 
     -- (Default) Only show the documentation popup when manually triggered
     completion = {
-      menu = { border = "single" },
+      menu = {
+        border = "single",
+        auto_show = true,
+        draw = {
+          treesitter = { "lsp" },
+          columns = { { "kind_icon", "label", "label_description", gap = 1 }, { "kind" } },
+        },
+      },
       documentation = { auto_show = true, window = { border = "single" } },
 
       -- https://cmp.saghen.dev/configuration/completion.html#ghost-text
