@@ -4,6 +4,8 @@
 
 local map = vim.keymap.set
 
+map("i", "jj", "<ESC>")
+
 -- map("n", "<leader>fw", "<cmd>Telescope live_grep<CR>", { desc = "telescope live grep" })
 
 -- Go to the beginning or end of the line
