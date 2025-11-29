@@ -9,6 +9,6 @@ else
     if [ "$1" = "single" ]; then
         tmux popup -d '#{pane_current_path}' -xC -yC -w75% -h75% -E "tmux attach -t 'popup-$CURRENT_PANE' || tmux new -s 'popup-$CURRENT_PANE'" || true
     else
-        tmux popup -xC -yC -w50% -h50% -E "tmux attach -t popup-master || tmux new -s popup-master" || true
+        tmux popup -d '#{pane_current_path}' -xC -yC -w75% -h75% -E "tmux attach -t popup-master || tmux new -s popup-master" || true
     fi
 fi
