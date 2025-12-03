@@ -1,14 +1,58 @@
+-- This file contains the configuration for the nvim-dap plugin in Neovim.
+
 return {
   {
+    -- Plugin: nvim-dap
+    -- URL: https://github.com/mfussenegger/nvim-dap
+    -- Description: Debug Adapter Protocol client implementation for Neovim.
     "mfussenegger/nvim-dap",
+    recommended = true, -- Recommended plugin
+    desc = "Debugging support. Requires language specific adapters to be configured. (see lang extras)",
+
     dependencies = {
+      "nvim-neotest/nvim-nio",
+      -- Plugin: nvim-dap-ui
+      -- URL: https://github.com/rcarriga/nvim-dap-ui
+      -- Description: A UI for nvim-dap.
       "rcarriga/nvim-dap-ui",
+
+      -- Plugin: nvim-dap-virtual-text
+      -- URL: https://github.com/theHamsta/nvim-dap-virtual-text
+      -- Description: Virtual text for the debugger.
       {
         "theHamsta/nvim-dap-virtual-text",
         opts = {}, -- Default options
       },
+      {
+        "leoluz/nvim-dap-go",
+        opts = {},
+      },
     },
+
+    -- Keybindings for nvim-dap
     keys = {
+      { "<leader>d", "", desc = "+debug", mode = { "n", "v" } }, -- Group for debug commands
+      {
+        "<leader>duo",
+        function()
+          require("dapui").open()
+        end,
+        desc = "open dap UI",
+      },
+      {
+        "<leader>dut",
+        function()
+          require("dapui").toggle()
+        end,
+        desc = "open dap UI",
+      },
+      {
+        "<leader>dB",
+        function()
+          require("dap").set_breakpoint(vim.fn.input("Breakpoint condition: "))
+        end,
+        desc = "Breakpoint Condition",
+      },
       {
         "<leader>db",
         function()
@@ -24,23 +68,84 @@ return {
         desc = "Continue",
       },
       {
-        "<leader>dsi",
+        "<leader>da",
+        function()
+          require("dap").continue({ before = get_args })
+        end,
+        desc = "Run with Args",
+      },
+      {
+        "<leader>dC",
+        function()
+          require("dap").run_to_cursor()
+        end,
+        desc = "Run to Cursor",
+      },
+      {
+        "<leader>dg",
+        function()
+          require("dap").goto_()
+        end,
+        desc = "Go to Line (No Execute)",
+      },
+      {
+        "<leader>di",
         function()
           require("dap").step_into()
         end,
         desc = "Step Into",
       },
       {
-        "<leader>dus",
+        "<leader>dj",
         function()
-          local widgets = require("dap.ui.widgets")
-          local sidebar = widgets.sidebar(widgets.scopes)
-          sidebar.open()
+          require("dap").down()
         end,
-        desc = "Open debugging sidebar",
+        desc = "Down",
       },
       {
-        "<leader>dS",
+        "<leader>dk",
+        function()
+          require("dap").up()
+        end,
+        desc = "Up",
+      },
+      {
+        "<leader>dl",
+        function()
+          require("dap").run_last()
+        end,
+        desc = "Run Last",
+      },
+      {
+        "<leader>do",
+        function()
+          require("dap").step_out()
+        end,
+        desc = "Step Out",
+      },
+      {
+        "<leader>dO",
+        function()
+          require("dap").step_over()
+        end,
+        desc = "Step Over",
+      },
+      {
+        "<leader>dp",
+        function()
+          require("dap").pause()
+        end,
+        desc = "Pause",
+      },
+      {
+        "<leader>dr",
+        function()
+          require("dap").repl.toggle()
+        end,
+        desc = "Toggle REPL",
+      },
+      {
+        "<leader>ds",
         function()
           require("dap").session()
         end,
@@ -54,15 +159,31 @@ return {
         desc = "Terminate",
       },
       {
-        "<leader>duh",
+        "<leader>dw",
         function()
           require("dap.ui.widgets").hover()
         end,
-        desc = "Do hover",
+        desc = "Widgets",
       },
     },
+
     config = function()
       local dap = require("dap")
+      local dapui = require("dapui")
+
+      -- use nvim-dap events to open and close the windows automatically
+      dap.listeners.before.attach.dapui_config = function()
+        dapui.open()
+      end
+      dap.listeners.before.launch.dapui_config = function()
+        dapui.open()
+      end
+      dap.listeners.before.event_terminated.dapui_config = function()
+        dapui.close()
+      end
+      dap.listeners.before.event_exited.dapui_config = function()
+        dapui.close()
+      end
 
       -- Load mason-nvim-dap if available
       if LazyVim.has("mason-nvim-dap.nvim") then
@@ -121,19 +242,5 @@ return {
         config.env = load_env_variables
       end
     end,
-  },
-  {
-    "leoluz/nvim-dap-go",
-    ft = "go",
-    dependencies = {
-      "mfussenegger/nvim-dap",
-    },
-    -- keys = {
-    --   "<leader>dgt",
-    --   function()
-    --     require("dap-go").debug_test()
-    --   end,
-    --   desc = "Debug go test",
-    -- },
   },
 }
