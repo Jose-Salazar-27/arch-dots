@@ -1,4 +1,5 @@
 return {
+  enabled = false,
   "luckasRanarison/nvim-devdocs",
   dependencies = {
     "nvim-lua/plenary.nvim",
