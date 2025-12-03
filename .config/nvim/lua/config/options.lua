@@ -31,3 +31,10 @@ vim.opt.winborder = "rounded"
 
 -- Auto update file if changed externally
 vim.opt.autoread = true
+
+-- Remove or modify the 'leadmultispace' and 'tab' characters in listchars
+vim.opt.listchars = {
+  tab = "  ", -- Two spaces, effectively hiding the guide character
+  leadmultispace = "  ",
+  -- ... other listchars settings ...
+}
