@@ -1,8 +1,8 @@
 return {
   {
-    "williamboman/mason.nvim",
+    "mason-org/mason.nvim",
     dependencies = {
-      "williamboman/mason-lspconfig.nvim",
+      "mason-org/mason-lspconfig.nvim",
       "WhoIsSethDaniel/mason-tool-installer.nvim",
     },
     cmd = { "Mason", "MasonInstall", "MasonInstallAll", "MasonUpdate" },
@@ -70,6 +70,7 @@ return {
           "actionlint",
           "nginx-config-formatter",
           "luacheck",
+          "sqlfluff",
           -- misc
           "gotests",
           "gotestsum",
@@ -77,5 +78,5 @@ return {
       })
     end,
   },
-  { "williamboman/mason-lspconfig.nvim" },
+  { "mason-org/mason-lspconfig.nvim" },
 }

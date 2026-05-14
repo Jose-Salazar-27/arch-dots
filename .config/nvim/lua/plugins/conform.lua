@@ -20,6 +20,7 @@ return {
       go = { "goimports", "gofmt" },
       lua = { "stylua" },
       nginx = { "nginx-config-formatter" },
+      sql = { "sqlfluff" },
     },
     default_format_opts = {
       lsp_format = "fallback",
