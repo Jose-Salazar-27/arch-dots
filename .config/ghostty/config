@@ -1,7 +1,7 @@
 theme = catppuccin-mocha.conf
-font-size = 14.75
+font-size = 16.00
 # font-size = 16
 # font-family = JetBrainsMono Nerd Font
-font-family = JetBrainsMono Nerd Font
+font-family = SFMono Nerd Font Mono
 # font-family = Mononoki Nerd Font
-# adjust-cell-height = 1
+adjust-cell-height = 1
