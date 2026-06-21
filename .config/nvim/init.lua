@@ -26,3 +26,7 @@ vim.o.termguicolors = true
 -- vim.highlight.priorities.semantic_tokens = 95
 require("config.globals")
 require("config.lazy")
+
+vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
+vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+vim.api.nvim_set_hl(0, "CursorLine", { bg = "#1a1a1a" })
