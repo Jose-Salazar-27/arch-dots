@@ -27,6 +27,40 @@ vim.o.termguicolors = true
 require("config.globals")
 require("config.lazy")
 
+vim.opt.winblend = 0
 vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
 vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
 vim.api.nvim_set_hl(0, "CursorLine", { bg = "#1a1a1a" })
+vim.api.nvim_set_hl(0, "NvimTreeNormal", { bg = "none" })
+vim.api.nvim_set_hl(0, "NormalNC", { bg = "none" })
+vim.api.nvim_set_hl(0, "NeoTree", { bg = "none" })
+
+local noice_highlights = {
+  "NoiceCmdlinePopup",
+  "NoiceCmdlinePopupBorder",
+  "NoiceCmdlineNormal",
+  "NoiceCmdlineBorder",
+  "NoicePopup",
+  "NoicePopupBorder",
+  "NormalFloat",
+  "FloatBorder",
+}
+
+for _, group in ipairs(noice_highlights) do
+  vim.api.nvim_set_hl(0, group, { bg = "none", ctermbg = "none" })
+end
+
+local neotree_highlights = {
+  "NeoTreeNormal",
+  "NeoTreeNormalNC",
+  "NeoTreeSignColumn",
+  "NeoTreeStatusLine",
+  "NeoTreeStatusLineNC",
+  "NeoTreeVertSplit",
+  "NeoTreeWinSeparator",
+  "NeoTreeEndOfBuffer",
+}
+
+for _, group in ipairs(neotree_highlights) do
+  vim.api.nvim_set_hl(0, group, { bg = "none", ctermbg = "none" })
+end
