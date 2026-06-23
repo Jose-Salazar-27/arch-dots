@@ -45,6 +45,13 @@ setopt hist_expire_dups_first
 setopt hist_ignore_dups
 setopt hist_verify
 
+# aliases
+alias dots='cd ~/dotfiles/'
+
+# eza
+alias lss='eza --icons --oneline --long --git'
+alias lsa='eza --icons --oneline --long --all'
+alias lst='eza --icons --tree'
 
 # pnpm
 export PNPM_HOME="/Users/matt/Library/pnpm"
