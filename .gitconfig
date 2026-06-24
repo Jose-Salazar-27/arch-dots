@@ -1,6 +1,13 @@
 [merge]
-    tool = vimdiff
+  tool = nvimdiff
+[mergetool]
+  keepBackup = false
+  ; optional:
+  conflictstyle = diff3
+; optional:
+[mergetool "nvimdiff"]
+  layout = "LOCAL,BASE,REMOTE / MERGED"
 
-[mergetool "vimdiff"]
-    path = nvim
-    cmd = nvim -d $LOCAL $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
+[user]
+	email = jose.dev2708@gmail.com
+	name = Jose-Salazar-27
