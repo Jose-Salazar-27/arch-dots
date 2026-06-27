@@ -1,7 +1,7 @@
 return {
   {
     "nvim-treesitter/nvim-treesitter",
-    branch = "master",
+    branch = "main",
     lazy = false,
     cmd = { "TSInstall", "TSBufEnable", "TSBufDisable", "TSModuleInfo" },
     build = ":TSUpdate",
@@ -14,7 +14,7 @@ return {
       return require("plugins.configs.treesitter")
     end,
     config = function(_, opts)
-      require("nvim-treesitter.configs").setup(opts)
+      require("nvim-treesitter.config").setup(opts)
     end,
   },
   {
