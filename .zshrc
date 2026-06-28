@@ -53,6 +53,11 @@ alias lss='eza --icons --oneline --long --git'
 alias lsa='eza --icons --oneline --long --all'
 alias lst='eza --icons --tree'
 
+#go
+export GOENV_ROOT="$HOME/.goenv"
+export PATH="$GOENV_ROOT/bin:$PATH"
+eval "$(goenv init -)"
+
 # pnpm
 export PNPM_HOME="/Users/matt/Library/pnpm"
 case ":$PATH:" in
@@ -64,3 +69,6 @@ esac
 # # Atuin - synced shell history (load last)
 # . "$HOME/.atuin/bin/env"
 # eval "$(atuin init zsh)"
+
+# opencode
+export PATH=/home/josertxloco/.opencode/bin:$PATH
