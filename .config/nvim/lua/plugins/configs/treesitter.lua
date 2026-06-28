@@ -22,6 +22,7 @@ return {
     "javascript",
     "tsx",
     "css",
+    "make",
   },
   highlight = {
     enable = true,

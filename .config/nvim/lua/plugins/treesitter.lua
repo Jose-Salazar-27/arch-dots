@@ -10,12 +10,48 @@ return {
       "windwp/nvim-ts-autotag",
       --"vrischmann/tree-sitter-templ",
     },
-    opts = function()
-      return require("plugins.configs.treesitter")
-    end,
-    config = function(_, opts)
-      require("nvim-treesitter.config").setup(opts)
-    end,
+    opts = {
+      ensure_installed = {
+        "go",
+        "gomod",
+        "gosum",
+        "gowork",
+        "gotmpl",
+        "lua",
+        "pkl",
+        "rust",
+        "gleam",
+        "templ",
+        "hyprlang",
+        "vim",
+        "vimdoc",
+        "python",
+        "dockerfile",
+        "bash",
+        "json",
+        "yaml",
+        "typescript",
+        "javascript",
+        "tsx",
+        "css",
+        "make",
+      },
+      highlight = {
+        enable = true,
+        use_languagetree = true,
+      },
+      indent = { enable = true },
+      autotag = {
+        enable = true,
+        enable_rename = true,
+        enable_close = true,
+        enable_close_on_slash = true,
+        filetypes = { "html", "xml" },
+      },
+    },
+    -- config = function(_, opts)
+    --   require("nvim-treesitter.config").setup(opts)
+    -- end,
   },
   {
     "windwp/nvim-ts-autotag",
